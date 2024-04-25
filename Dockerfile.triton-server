@@ -1,0 +1,8 @@
+FROM aimle2e/triton_trt_llm:0.9.0
+
+WORKDIR /app
+
+COPY e2e_scripts/mistral-7b-instruct-v0.2/run_server.sh scripts/run_server.sh
+
+RUN find . -type f -name "*.py" -exec chmod +x {} \;
+RUN find . -type f -name "*.sh" -exec chmod +x {} \;
